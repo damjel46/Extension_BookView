@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>BookView — Settings</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      width: 100%;
+      max-width: 540px;
+      padding: 32px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 12px;
+    }
+
+    .shortcut-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .shortcut-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f9f9f9;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+
+    .shortcut-label {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .shortcut-badge {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    kbd {
+      display: inline-block;
+      padding: 3px 8px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #aaa;
+      border-radius: 5px;
+      font: 600 12px/1.5 monospace;
+      color: #222;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 24px 0;
+    }
+
+    .desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .desc code {
+      background: #f0f0f0;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #c0392b;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #1a73e8;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font: 600 14px system-ui, sans-serif;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn:hover { background: #1558b0; }
+
+    .note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #999;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>📖 BookView</h1>
+    <p class="subtitle">Book-style dual view — Keyboard Shortcuts</p>
+
+    <h2>Registered Shortcuts</h2>
+    <div class="shortcut-list">
+      <div class="shortcut-row">
+        <span class="shortcut-label">Toggle ON / OFF (Primary)</span>
+        <div class="shortcut-badge" id="badge-main">
+          <kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>S</kbd>
+        </div>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Toggle ON / OFF (Secondary)</span>
+        <div class="shortcut-badge" id="badge-alt">
+          <kbd>Alt</kbd><span>+</span><kbd>S</kbd>
+        </div>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Toolbar Icon</span>
+        <div class="shortcut-badge">
+          <span style="font-size:13px;color:#555">Click the toolbar icon</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>How to Change Shortcuts</h2>
+    <p class="desc">
+      Chrome does not allow extensions to change shortcuts directly due to security policy.<br>
+      Click the button below to open the official Chrome shortcuts page (<code>chrome://extensions/shortcuts</code>).<br>
+      Find <strong>BookView</strong> and set your preferred keys.
+    </p>
+    <button class="btn" id="openShortcuts">
+      ⌨️ Open Shortcut Settings
+    </button>
+    <p class="note">
+      * Allowed combinations: <kbd>Ctrl+Shift+Key</kbd> or <kbd>Alt+Key</kbd><br>
+      * Ctrl+Alt combinations and single Ctrl+Key are not allowed by Chrome policy
+    </p>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
