@@ -11,10 +11,6 @@
     "storage"
   ],
 
-  "host_permissions": [
-    "<all_urls>"
-  ],
-
   "background": {
     "service_worker": "background.js"
   },
@@ -42,14 +38,7 @@
         "default": "Ctrl+Shift+S",
         "mac": "Ctrl+Shift+S"
       },
-      "description": "Toggle BookView ON/OFF (Primary)"
-    },
-    "alt-toggle": {
-      "suggested_key": {
-        "default": "Alt+S",
-        "mac": "Alt+S"
-      },
-      "description": "Toggle BookView ON/OFF (Secondary)"
+      "description": "Toggle BookView ON/OFF"
     }
   }
 }

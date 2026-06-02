@@ -24,6 +24,5 @@ chrome.commands.getAll((commands) => {
     }
 
     if (cmd.name === "_execute_action") renderBadge("badge-main");
-    if (cmd.name === "alt-toggle")      renderBadge("badge-alt");
   });
 });
